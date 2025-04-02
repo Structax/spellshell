@@ -3,11 +3,13 @@
 *A terminal where you cast spells instead of typing commands.*
 
 ---
-![SpellShell demo](assets/demo.gif)
+
 
 ## ✨ What is SpellShell?
 
 SpellShell is a magical terminal interface where traditional shell commands are replaced with intuitive, fantasy-inspired spells.
+
+![SpellShell demo](assets/demo.gif)
 
 No more `nginx -g daemon off`. Just say:
 
