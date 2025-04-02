@@ -1,0 +1,6 @@
+{
+    "summon nginx silently": "docker run nginx",
+    "banish node_modules into the void": "rm -rf node_modules",
+    "invoke fire postgres": "docker run postgres"
+  }
+  
