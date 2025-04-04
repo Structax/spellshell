@@ -1,0 +1,3 @@
+banish .DS_Store files
+banish tmp logs
+cloak api-key from output

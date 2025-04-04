@@ -1,0 +1,30 @@
+WHITESPACE = _{ " " | "\t" }
+NEWLINE    = _{ "\n" | "\r\n" }
+COMMENT    = _{ "#" ~ (!NEWLINE ~ ANY)* }
+
+program    = { SOI ~ (_ ~ (spell_line ~ (_ | COMMENT)?)* ~ EOI) }
+spell_line = { command ~ NEWLINE* }
+command    = { verb ~ WHITESPACE+ ~ target ~ (WHITESPACE+ ~ modifier)* }
+
+verb       = _{ 
+    "summon" 
+  | "banish" 
+  | "cloak" 
+  | "divine"
+  | "teleport"
+}
+
+target     = { word ~ (WHITESPACE+ ~ word)* }
+
+modifier   = { modifier_token ~ (WHITESPACE+ ~ word)* }
+
+modifier_token = _{
+    "silently" |
+    "forcefully" |
+    "for" |
+    "to" |
+    "from" |
+    word   // fallback: allow custom modifiers
+}
+
+word       = @{ (ASCII_ALPHANUMERIC | "_" | "-" | ".")+ }
